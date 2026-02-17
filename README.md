@@ -26,6 +26,8 @@ TASTEAPI/
 │
 ├── public/
 ├── src/
+    ├── app/
+        ├── store.jsx/
 │   ├── assets/
 │   ├── components/
 │   │   ├── footer/
