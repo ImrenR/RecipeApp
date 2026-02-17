@@ -61,7 +61,7 @@ RECIPE APP/
 │   ├── App.css
 │   └── App.jsx
 │   └── main.jsx
-    └── index.css               # tailwind
+    └── index.css              # tailwind
 └── package.json
 ```
 ---
