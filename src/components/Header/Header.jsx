@@ -1,17 +1,20 @@
-import { useState } from "react";
+import {  useState } from "react";
 import { getirData } from "../../features/recipeSlice";
 import RecipeCard from "./RecipeCard";
 import { useDispatch, useSelector } from "react-redux";
+import home from "../../assets/home.svg"
 const Header = () => {
 
   
   const [query, setQuery] = useState("");
-  const { loading, foods } = useSelector((state) => state.recipeSlice);
+
+  const { loading, foods, foodVisible} = useSelector((state) => state.recipeSlice);
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getirData(query));
+  
   };
 
   if (loading) return <p>LOADING....</p>;
@@ -33,11 +36,22 @@ const Header = () => {
           SEARCH
         </button>
       </form>
+ 
+<div className="mt-6">
 
-      <div className="w-full grid gap-6 grid-cols-1 sm:grid-cols-1 md:grid-cols-4 justify-items-center">
+  {foodVisible? (
+<div className="w-full grid gap-6 grid-cols-1 sm:grid-cols-1 md:grid-cols-4 justify-items-center">
         {foods &&
           foods.map((meal) => <RecipeCard key={meal.idMeal} meal={meal} />)}
       </div>
+
+
+  ):(
+
+    <img src={home} alt="" />
+  )}
+      
+</div>
     </div>
   );
 };

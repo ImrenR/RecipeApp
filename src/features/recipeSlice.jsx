@@ -1,16 +1,16 @@
 import axios from "axios";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export const getirData = createAsyncThunk
-("recipeSlice/getirData", 
+export const getirData = createAsyncThunk(
+  "recipeSlice/getirData",
   async (query) => {
- const res= await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
+    const res = await axios.get(
+      `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`,
+    );
 
-
- return res.data.meals;
-
-
-});
+    return res.data.meals;
+  },
+);
 
 const recipeSlice = createSlice({
   name: "haberSlice",
@@ -19,13 +19,16 @@ const recipeSlice = createSlice({
     foods: [],
     loading: false,
     selectedMeal: null,
+    foodVisible:false,
   },
   reducers: {
     //datadan veri cekmek istiyorsan burayi kullanma
-    goDetails: (state, {payload}) => {
-state.selectedMeal=payload;
-
+    goDetails: (state, { payload }) => {
+      state.selectedMeal = payload;
     },
+
+    showFoods :(state)=> {state.foodVisible=true},
+     hideFoods :(state)=> {state.foodVisible=false},
   },
 
   extraReducers: (builder) => {
@@ -34,12 +37,12 @@ state.selectedMeal=payload;
       .addCase(getirData.pending, (state) => {
         state.loading = true;
       })
-      .addCase(getirData.fulfilled, (state, 
-        {payload}) => {
-       state.foods=payload;
-       state.loading=false;
+      .addCase(getirData.fulfilled, (state, { payload }) => {
+        state.foods = payload;
+        state.loading = false;
+        state.foodVisible=true
       });
   },
 });
-export const {goDetails}=recipeSlice.actions;
+export const { goDetails,hideFoods,showFoods } = recipeSlice.actions;
 export default recipeSlice.reducer;

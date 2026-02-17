@@ -3,11 +3,15 @@
 import { useState } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import {Link, NavLink} from'react-router-dom';
+import {useDispatch} from 'react-redux';
+import {hideFoods} from "../features/recipeSlice"
+
 
 
 const MyNavbar = () => {
 
    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+const dispatch=useDispatch();
   return ( 
   <header className="bg-white shadow">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
@@ -17,6 +21,7 @@ const MyNavbar = () => {
             src="https://static.thenounproject.com/png/2434646-200.png"
             alt="Logo"
             className="h-20 w-20"
+            onClick={()=>dispatch(hideFoods())}
           />
         </Link>
 
@@ -25,7 +30,8 @@ const MyNavbar = () => {
           <NavLink
           to="/" 
           style={({isActive})=> ({color:isActive && "red"})}
-          className="text-sm font-semibold text-gray-900 hover:text-indigo-600">
+          className="text-sm font-semibold text-gray-900 hover:text-indigo-600"
+                onClick={()=>dispatch(hideFoods())}>
             Home
           </NavLink>
           <NavLink
@@ -34,7 +40,7 @@ const MyNavbar = () => {
           className="text-sm font-semibold text-gray-900 hover:text-indigo-600">
             About
           </NavLink>
-          <a href="https://github.com/ImrenR" className="text-sm font-semibold text-gray-900 hover:text-indigo-600">
+          <a href="https://github.com/ImrenR" target="_blank" className="text-sm font-semibold text-gray-900 hover:text-indigo-600">
             Github
           </a>
           <Link to="/logout" className="text-sm font-semibold text-gray-900 hover:text-indigo-600">
@@ -64,7 +70,9 @@ const MyNavbar = () => {
             <NavLink
           to="/" 
           style={({isActive})=> ({color:isActive && "red"})}
-          className="text-sm font-semibold text-gray-900 hover:text-indigo-600">
+          className="text-sm font-semibold text-gray-900 hover:text-indigo-600"
+                onClick={()=>dispatch(hideFoods())}
+          >
             Home
           </NavLink>
             <NavLink 
@@ -73,7 +81,7 @@ const MyNavbar = () => {
             className="text-sm font-semibold text-gray-900 hover:text-indigo-600">
              About
             </NavLink>
-            <a href="https://github.com/ImrenR" className="text-sm font-semibold text-gray-900 hover:text-indigo-600">
+            <a href="https://github.com/ImrenR"  target="_blank" className="text-sm font-semibold text-gray-900 hover:text-indigo-600">
              Github
             </a>
             <Link to="/logout" className="text-sm font-semibold text-gray-900 hover:text-indigo-600">
