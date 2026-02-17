@@ -33,7 +33,7 @@ Password: 6789
 ## Project Structure
 
 ```
-TASTEAPI/
+RECIPE APP/
 │
 ├── public/
 ├── src/
