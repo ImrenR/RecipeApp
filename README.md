@@ -32,6 +32,7 @@ Password: 6789
 
 ## Project Structure
 
+```
 TASTEAPI/
 │
 ├── public/
@@ -62,7 +63,7 @@ TASTEAPI/
 │   └── main.jsx
     └── index.css               # tailwind
 └── package.json
-
+```
 ---
 
 ## API Reference
