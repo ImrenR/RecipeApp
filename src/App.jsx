@@ -1,5 +1,5 @@
 import AppRouter from "./router/AppRouter"
-import PrivateRouter from "./router/PrivateRouter"
+//import PrivateRouter from "./router/PrivateRouter"
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
    <div>
 
    <AppRouter/>
-   <PrivateRouter/>
+   {/* <PrivateRouter/> */}
    </div>
   )
 }
