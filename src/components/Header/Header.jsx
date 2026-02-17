@@ -17,7 +17,7 @@ const Header = () => {
   if (loading) return <p>LOADING....</p>;
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-5 rounded shadow-lg">
+    <div className="max-w-6xl mx-auto mt-10 p-5 rounded shadow-lg">
       <form onSubmit={handleSubmit} className="flex gap-2">
         <input
           type="text"
@@ -34,7 +34,7 @@ const Header = () => {
         </button>
       </form>
 
-      <div>
+      <div className="w-full grid gap-6 grid-cols-1 sm:grid-cols-1 md:grid-cols-4 justify-items-center">
         {foods &&
           foods.map((meal) => <RecipeCard key={meal.idMeal} meal={meal} />)}
       </div>
