@@ -1,73 +1,91 @@
 # TasteAPI
 
-This project has been deployed on Vercel: [https://recipe-app-ecru-omega.vercel.app/](https://recipe-app-ecru-omega.vercel.app/)
+This project has been deployed on Vercel: https://recipe-app-ecru-omega.vercel.app/
 
-
-A React-based recipe search application that allows users to find meals using [TheMealDB API](https://www.themealdb.com/api.php).  
-This project demonstrates how to use **Redux**, **Tailwind v3**, **Private Routing**, and **Axios** to create a smooth, real-world recipe browsing experience.
+A React-based recipe search application that allows users to find meals using TheMealDB API.
+This project demonstrates how to use Redux, Tailwind v3, Private Routing, and Axios to create a smooth, real-world recipe browsing experience.
 
 ---
 
-##  Features
+## Login Credentials
 
--  **Login Authentication** (simple credential check)
-- **Recipe Search** powered by TheMealDB API
-- **Global State Management** using Redux Thunk
-- **Private Routing** with React Router DOM
-- **Loading & Error Handling**
-- **Automatic Redirect** from 404 Page
-- **Clean Component-Based Architecture**
+For testing purposes, the app currently uses a simple credential check:
+
+Email: imren
+Password: 6789
+
+**Note:** The login system has been temporarily simplified by commenting out the private router and authSlice to allow easy deployment and usage on Vercel.
+
+---
+
+## Features
+
+- Login Authentication (simple credential check)
+- Recipe Search powered by TheMealDB API
+- Global State Management using Redux Thunk
+- Private Routing with React Router DOM
+- Loading & Error Handling
+- Automatic Redirect from 404 Page
+- Clean Component-Based Architecture
 
 ---
 
 ## Project Structure
-```
+
 TASTEAPI/
 │
 ├── public/
 ├── src/
-    ├── app/
-        ├── store.jsx/
+│   ├── app/
+│   │   └── store.jsx
 │   ├── assets/
 │   ├── components/
-│   │   ├── footer/
-│   │   ├── header/
-│   │   ├── navbar/
+│   │   ├── Footer.jsx/
+│   │   ├── Header/
+            ├── Header.jsx/
+            ├── RecipeCard.jsx/
+│   │   ├── MyNavbar.jsx/
 │   ├── features/
-│   │   └── recipeSlice.jsx
-        └── authSlice.jsx
+│   │   ├── recipeSlice.jsx
+│   │   └── authSlice.jsx   # currently commented out for Vercel
 │   ├── pages/
-│   │   ├── about/
-│   │   ├── details/
-│   │   ├── errorPage/
-│   │   ├── home/
-│   │   
+│   │   ├── About.jsx/
+│   │   ├── Details.jsx/
+│   │   ├── NotFound.jsx/
+│   │   └── Home.jsx/
+        └── Login.jsx/
 │   ├── router/
 │   │   ├── AppRouter.jsx
-│   │   └── PrivateRouter.jsx
+│   │   └── PrivateRouter.jsx  # currently commented out for Vercel
 │   ├── App.css
 │   └── App.jsx
-│
+│   └── main.jsx
+    └── index.css               # tailwind
 └── package.json
-```
 
+---
 
-## API reference
+## API Reference
 
-BASE URL : https://www.themealdb.com/api/json/v1/1/search.php?s=${query}
+BASE URL:
+https://www.themealdb.com/api/json/v1/1/search.php?s=${query}
 
+---
 
-## Not Found page
+## Not Found Page
 
-**When a user visits a non-existent route:**
+When a user visits a non-existent route:
 
 - Displays a message: “Oops!... Something went wrong”
+- Countdown timer (5 seconds)
+- Automatically redirects to the /home page
 
-- A countdown timer (5 seconds)
+---
 
-- Redirects automatically to the /home page.
-
-
-## Technology Used:
+## Technology Used
 
 - React.js
+- Redux & Redux Thunk
+- Tailwind CSS v3
+- Axios
+- React Router DOM
