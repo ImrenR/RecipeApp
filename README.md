@@ -7,13 +7,7 @@ This project demonstrates how to use Redux, Tailwind v3, Private Routing, and Ax
 
 ---
 
-## Demo
-
-<img src="./img/recipedemo.gif" width="300" alt="Watch Demo" />
-
-
-
-
+![Watch Demo](./img/recipedemo.gif)
 
 ---
 ## Login Credentials
