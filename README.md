@@ -7,6 +7,11 @@ This project demonstrates how to use Redux, Tailwind v3, Private Routing, and Ax
 
 ---
 
+## Demo
+![Watch Demo](assets/images/home.png)
+
+
+---
 ## Login Credentials
 
 For testing purposes, the app currently uses a simple credential check:
