@@ -34,7 +34,8 @@ TASTEAPI/
 │   │   ├── header/
 │   │   ├── navbar/
 │   ├── features/
-│   │   └── recipeSlider.jsx
+│   │   └── recipeSlice.jsx
+        └── authSlice.jsx
 │   ├── pages/
 │   │   ├── about/
 │   │   ├── details/
